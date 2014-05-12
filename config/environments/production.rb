@@ -80,4 +80,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Elasticsearch
+  Elasticsearch::Model.client = Elasticsearch::Client.new host: 'o9rz6gxp:zgi8taqo7z6njgfb@smoke-5238757.us-east-1.bonsai.io'
 end
