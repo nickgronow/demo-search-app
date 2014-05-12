@@ -1,4 +1,4 @@
 class Article < ActiveRecord::Base
-  include Searchable
+  searchkick
   validates :title, presence: true
 end

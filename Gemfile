@@ -27,8 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Elasticsearch
-gem 'elasticsearch-model', '0.1.1', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
-gem 'elasticsearch-rails', '0.1.1', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'searchkick'
 
 # Foundation
 gem 'foundation-rails'
