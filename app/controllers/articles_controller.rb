@@ -65,7 +65,7 @@ class ArticlesController < ApplicationController
   end
 
   def results
-    @response = Article.search params[:search]
+    @articles = Article.search params[:search]
   end
 
   private

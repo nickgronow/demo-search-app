@@ -1,11 +1,10 @@
 <h2>Search Results: <%= params[:search] %></h2>
-<p class="right-align">Found <%= pluralize @response.results.total, 'article' %></p>
-<% if @response.results.any? %>
-  <% @response.results.each do |r| %>
+<p class="right-align">Found <%= pluralize @articles.count, 'article' %></p>
+<% if @articles.any? %>
+  <% @articles.each do |a| %>
     <div class="result">
-      <h3><%= r._source.title %></h3>
-      <p><%= r._source.body %></p>
-      <p class="note">Match score: <%= r._score %></h3>
+      <h3><%= a.title %></h3>
+      <p><%= a.body %></p>
     </div>
   <% end %>
 <% end %>
