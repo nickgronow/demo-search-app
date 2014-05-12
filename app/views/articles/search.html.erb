@@ -1,0 +1,8 @@
+<h2>Search Articles</h2>
+
+<%= form_tag action: 'results' do %>
+  <%= label_tag :search, "Keywords" %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search", class: 'button' %>
+  <%= link_to 'Manage Articles', articles_path, class: 'button secondary' %>
+<% end %>

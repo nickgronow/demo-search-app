@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Searchapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Demo Search Application" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <div data-alert class="alert-box radius">
+        <%= flash[:notice] %>
+        <a href="#" class="close">&times</a>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <h1>Demo Search Application</h1>
+      <p class="subtitle">Showcasing Elasticsearch</p>
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

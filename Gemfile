@@ -30,6 +30,9 @@ gem 'spring',        group: :development
 gem 'elasticsearch-model', '0.1.1', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', '0.1.1', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
+# Foundation
+gem 'foundation-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

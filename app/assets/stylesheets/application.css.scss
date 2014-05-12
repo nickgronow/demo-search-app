@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+@import "foundation_and_overrides";
+
+body {
+  background-color: #eee;
+}
+.container {
+  width: 950px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: white;
+}
+.subtitle {
+  color: #777;
+  font-style: italic;
+  font-size: 1.1em;
+  margin: -0.25em 0 0;
+}
+h2 {
+  margin: 1.25em 0 0.5em;
+  background-color: #E9E9FF;
+  color: #222277;
+  padding: 0.25em 0.5em;
+  font-size: 1.75em;
+}
+.alert-box {
+  ul {
+    margin-bottom: 0;
+  }
+}
+label {
+  margin-bottom: 10px;
+}
+input {
+  margin: 10px 0;
+}
+.field_with_errors {
+  label {
+    color: red;
+  }
+  input {
+    border: 1px solid red;
+  }
+}
+.right-align {
+  text-align: right;
+  float: none;
+}
+.note {
+  color: #888;
+  margin: -0.5em 0 0;
+  font-size: 0.9em;
+}
+.result {
+  margin: 1.5em 0;
+  Background-color: #f2f2f2;
+  padding: 10px 20px;
+}
