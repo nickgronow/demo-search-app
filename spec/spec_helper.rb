@@ -39,4 +39,9 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Make sure to reindex when testing
+  config.before :each do
+    Article.reindex
+  end
 end
