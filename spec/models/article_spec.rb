@@ -2,9 +2,16 @@ require 'spec_helper'
 
 describe Article do
 
+  it 'has a title' do
+    subject.should respond_to(:title)
+  end
+
+  it 'has a body' do
+    subject.should respond_to(:body)
+  end
+
   it 'is invalid without a title' do
-    article = Article.new
-    article.should_not be_valid
+    subject.should_not be_valid
   end
 
   it 'should have search functionality' do
@@ -16,10 +23,10 @@ describe Article do
   end
 
   it 'should find results with word stemming' do
-    article = Article.new title: 'Testing word stemming with a word like jumping'
-    article.save
+    subject.title = 'Testing word stemming with a word like jumping'
+    subject.save
     Article.reindex
     results = Article.search 'jumps'
-    results.count.should == 1
+    results.should include(subject)
   end
 end
