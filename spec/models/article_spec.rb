@@ -2,19 +2,15 @@ require 'spec_helper'
 
 describe Article do
 
-  it 'has a title' do
-    subject.should respond_to(:title)
-  end
-
-  it 'has a body' do
-    subject.should respond_to(:body)
-  end
+  it { should respond_to(:title) }
+  
+  it { should respond_to(:body) }
 
   it 'is invalid without a title' do
-    subject.should_not be_valid
+    should_not be_valid
   end
 
-  it 'should have search functionality' do
+  it 'should be able to reindex' do
     Article.should respond_to(:reindex)
   end
 
