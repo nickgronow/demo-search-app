@@ -19,11 +19,17 @@ describe Article do
     Article.should respond_to(:search)
   end
 
-  it 'should find results with word stemming' do
-    article.title = 'Testing word stemming with a word like jumping'
-    article.save
-    Article.reindex
-    results = Article.search 'jumps'
-    results.should include(article)
+  context 'with a title' do
+    subject!(:article) { Article.create(title:'A Catchy Title') }
+    before { Article.reindex }
+
+    it 'should be included in elasticsearch index' do
+      Article.search('*').count == 1
+    end
+
+    it 'should find results with word stemming' do
+      results = Article.search 'catches'
+      results.should include(article)
+    end
   end
 end
