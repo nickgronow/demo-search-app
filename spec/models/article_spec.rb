@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Article do
+  subject(:article) { Article.new }
 
   it { should respond_to(:title) }
   
@@ -19,10 +20,10 @@ describe Article do
   end
 
   it 'should find results with word stemming' do
-    subject.title = 'Testing word stemming with a word like jumping'
-    subject.save
+    article.title = 'Testing word stemming with a word like jumping'
+    article.save
     Article.reindex
     results = Article.search 'jumps'
-    results.should include(subject)
+    results.should include(article)
   end
 end
